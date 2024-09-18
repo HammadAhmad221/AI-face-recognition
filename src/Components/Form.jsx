@@ -94,7 +94,7 @@ const Form = () => {
           <MenuItem value="PPE Detection">PPE Detection</MenuItem>
         </Select>
               {/* Preferred Demo Date */}
-      {/* <LocalizationProvider dateAdapter={AdapterDayjs}> */}
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DatePicker
           label="Preferred Demo Date"
           value={demoDate}
@@ -120,7 +120,7 @@ const Form = () => {
             />
           )}
         />
-      {/* </LocalizationProvider> */}
+      </LocalizationProvider>
 
       <Button
         variant="contained"
