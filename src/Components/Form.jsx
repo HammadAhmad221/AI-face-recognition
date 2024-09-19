@@ -26,7 +26,6 @@ const Form = () => {
         borderRadius: 2
       }}
     >
-      {/* Full Name */}
       <TextField
         fullWidth
         margin="normal"
@@ -35,7 +34,6 @@ const Form = () => {
         placeholder="Enter your name"
       />
 
-      {/* Company Name */}
       <TextField
         fullWidth
         margin="normal"
@@ -44,10 +42,8 @@ const Form = () => {
         placeholder="Enter your company name"
       />
 
-      {/* Number of Employees */}
       <FormControl fullWidth margin="normal">
         <InputLabel 
-        // sx={{ color: 'white' }}
         >Number of Employees</InputLabel>
         <Select
           defaultValue=""
@@ -60,7 +56,6 @@ const Form = () => {
         </Select>
       </FormControl>
 
-      {/* Email Address */}
       <TextField
         fullWidth
         margin="normal"
@@ -70,7 +65,6 @@ const Form = () => {
         type="email"
       />
 
-      {/* Phone Number */}
       <TextField
         fullWidth
         margin="normal"
@@ -79,10 +73,8 @@ const Form = () => {
         placeholder="Enter your phone number"
       />
 
-      {/* Interested Model */}
       <FormControl fullWidth margin="normal" >
         <InputLabel 
-        // sx={{ color: 'white' }}
         sx={{
           marginBottom:'8px',
         }}>Interested Model</InputLabel>
@@ -93,9 +85,9 @@ const Form = () => {
           <MenuItem value="Face Recognition">Face Recognition</MenuItem>
           <MenuItem value="PPE Detection">PPE Detection</MenuItem>
         </Select>
-              {/* Preferred Demo Date */}
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DatePicker
+        sx={{mt:2,mb:2}}
           label="Preferred Demo Date"
           value={demoDate}
           onChange={(newValue) => setDemoDate(newValue)}
@@ -107,7 +99,6 @@ const Form = () => {
             />
           )}
         />
-        {/* Preferred Demo Time */}
         <TimePicker
           label="Preferred Demo Time"
           value={demoTime}
