@@ -1,8 +1,5 @@
-#root {
-  /* max-width: 1280px; */
+/* #root {
   margin: 0;
-  /* padding-left: 2rem; */
-  /* padding-right: 2rem; */
   text-align: center;
 }
 
@@ -34,10 +31,10 @@
   }
 }
 
-/* .card {
+.card {
   padding: 2em;
-} */
+}
 
 .read-the-docs {
   color: #888;
-}
+} */

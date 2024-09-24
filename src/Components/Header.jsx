@@ -27,28 +27,36 @@ const Header = () => {
   return (
     <AppBar 
       // position="static"
-      position="sticky"
+      position="absolute"
       sx={{
-        // backgroundColor: 'transparent',
+        backgroundColor: 'transparent',
         boxShadow: 'none',
+        top:"30px"
       }}
     >
       <Toolbar>
-        <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h4" component="div" sx={{flexGrow:1,fontFamily:'Inria Sans',fontSize:'2rem', fontWeight:'700',gap:'2rem'}}>
           SWAY AI
         </Typography>
-        <Button color="inherit" component={Link} to="/home">Demo</Button>
-        <Button color="inherit" component={Link} to="#">Templates</Button>
-        <Button color="inherit" component={Link} to="#">Price</Button>
-        <Button color="inherit" component={Link} to="#">Help</Button>
+<div style={{
+  display:"flex",
+  gap:"16px",
+}}>
+<Button color="inherit" component={Link} to="#" sx={{fontFamily:'Poppins',fontSize:'1rem', fontWeight:'500'}}>Wht Sway AI ?</Button>
+        <Button color="inherit" component={Link} to="#" sx={{fontFamily:'Poppins',fontSize:'1rem', fontWeight:'500'}}>PPE Module</Button>
+        <Button color="inherit" component={Link} to="/home" sx={{fontFamily:'Poppins',fontSize:'1rem', fontWeight:'500'}}>Attendance Module</Button>
+        <Button color="inherit" component={Link} to="#" sx={{fontFamily:'Poppins',fontSize:'1rem', fontWeight:'500'}}>Schedule A Demo</Button>
         <Button 
           component={Link} 
           to="#" 
           sx={{
-            backgroundColor: '#CBC3E3', 
+            backgroundColor: '#534998', 
             color: 'white',          
-            borderRadius: '5px',      
-            padding: '5px 15px',     
+            borderRadius: '4px',      
+            padding: '12px 20px',
+            fontFamily:'Poppins',
+            fontSize:'1rem',
+            fontWeight:'500',   
             '&:hover': {
               backgroundColor: '#ff79b0',
             }
@@ -56,6 +64,7 @@ const Header = () => {
         >
           Contact
         </Button>
+</div>
       </Toolbar>
     </AppBar>
   );

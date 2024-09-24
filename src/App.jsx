@@ -18,7 +18,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './LandingPage';
 import Header from './Components/Header';
 import HomePage from './HomePage';
-import Form from "./Components/Form";
+import Form from "./Components/MyForm";
 
 const App = () => {
   return (
@@ -27,7 +27,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/attendance-module" element={<HomePage />} />
           <Route path="/form" element={<Form/>} />
         </Routes>
       </main>

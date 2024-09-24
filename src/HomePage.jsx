@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Avatar, Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography } from '@mui/material';
 
-const HomePage = () => {
+const AttendanceModule = () => {
   const [open, setOpen] = useState(false);
   const[data ,setData]=useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
@@ -141,4 +141,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default AttendanceModule;

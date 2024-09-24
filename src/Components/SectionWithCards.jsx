@@ -3,26 +3,37 @@ import { Container, Typography, Box, Card, CardContent } from '@mui/material';
 
 const SectionWithCards = () => {
   return (
-    <Box sx={{ display: 'flex', width: '100%', height: '60vh', alignItems: 'center', justifyContent: 'space-around' }}>
+    <Box sx={{ display: 'flex', width: '91%', height: '60vh', alignItems: 'center', justifyContent: 'center', padding:'4rem' }}>
       {/* First Section: Heading and Paragraph */}
-      <Container sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '50%' }}>
+      <Container sx={{ display: 'flex', flexDirection: 'column', width: '50%' }}>
         <Typography
           variant="h3"
           component="h2"
           sx={{
-            fontSize: '4rem',  
-            // textAlign: 'center'
+            fontSize: '3rem',
+            color:'#1C154F',
+            fontFamily:'Poppins',
+            fontWeight:600,
           }}
         >
-         Transform your<br/> Business with future<br/><span style={{
-            color:'#6A0DAD'
+         Transform Your<br/> Business With Future<br/><span style={{
+            background: "linear-gradient(90deg, #7266BE 0%, #63B1A7 64.58%, #42C09A 100%)",
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            marginTop:'24px',
          }}>AI Solutions</span>
         </Typography>
         <Typography
           variant="body1"
-          // component="h2"
-          sx={{ color: 'gray',
-            fontSize:'1.5rem',
+          sx={{ 
+            color: '#848484',
+            fontFamily: "Poppins",
+            fontSize: '16px',
+            fontStyle: "normal",
+            fontWeight: 500,
+            lineHeight:'24px',
+            marginTop:'24px',
             }}
         >
         Empower your business to grow without limits. Our AI <br/> tool integrates seamlessly into your existing<br/> systems, providing
@@ -51,19 +62,22 @@ const SectionWithCards = () => {
             zIndex: 1,
             transform: 'scale(1) rotate(-5deg)',
             transition: 'transform 0.3s ease-in-out, top 0.3s ease-in-out, left 0.3s ease-in-out',
-            width: '70%',  // Increased card width
-            height: 150, // Decreased card height
+            width: '70%',
+            height: 150,
             margin: '0',
-            top: '10%',  // Position from top
-            left: '15%', // Position from left
+            top: '10%',
+            left: '15%',
             '&:hover': {
               transform: 'scale(1.2) rotate(0deg)',
             },
           }}
         >
           <CardContent>
-            <Typography variant="h6">Feature 1</Typography>
-            <Typography variant="body2">Description for feature 1.</Typography>
+            <div className='flex gap-2'>
+            <img src="/Group.svg" alt="Icon" />
+            <h3 className='text-[#1c144e] text-2xl font-semibold font-[Poppins]'>Automation of Repetitive Tasks</h3>
+            </div>
+            <p className='text-justify text-[#838383] text-base font-medium font-[Poppins]'>Eliminate time-consuming manual processes by automating repetitive tasks, allowing your team to focus on.</p>
           </CardContent>
         </Card>
         {/* Card 2 */}
@@ -74,11 +88,11 @@ const SectionWithCards = () => {
             zIndex: 2,
             transform: 'scale(1) rotate(0deg)',
             transition: 'transform 0.3s ease-in-out, top 0.3s ease-in-out, left 0.3s ease-in-out',
-            width: '70%',  // Increased card width
-            height: 150, // Decreased card height
+            width: '70%',
+            height: 150,
             margin: '0',
-            top: '30%',  // Position from top
-            left: '20%', // Position from left
+            top: '30%',
+            left: '20%',
             '&:hover': {
               transform: 'scale(1.2) rotate(-5deg)',
             //   left:"10%",
@@ -86,8 +100,11 @@ const SectionWithCards = () => {
           }}
         >
           <CardContent>
-            <Typography variant="h6">Feature 2</Typography>
-            <Typography variant="body2">Description for feature 2.</Typography>
+            <div className='flex gap-2'>
+            <img src="/Group1.svg" alt="Icon" />
+            <h3 className='text-[#1c144e] text-2xl font-semibold font-[Poppins]'>Scalable AI Infrastructure</h3>
+            </div>
+            <p className='text-justify text-[#838383] text-base font-medium font-[Poppins]'>Seamlessly integrates into your existing systems, with the capacity to add new modules as your business evolves.</p>
           </CardContent>
         </Card>
         {/* Card 3 */}
@@ -109,8 +126,11 @@ const SectionWithCards = () => {
           }}
         >
           <CardContent>
-            <Typography variant="h6">Feature 3</Typography>
-            <Typography variant="body2">Description for feature 3.</Typography>
+            <div className='flex gap-2'>
+            <img src="/Group2.svg" alt="Icon" />
+            <h3 className='text-[#1c144e] text-2xl font-semibold font-[Poppins]'>Data-Driven Insights</h3>
+            </div>
+            <p className='text-justify text-[#838383] text-base font-medium font-[Poppins]'>Seamlessly integrates into your existing systems, with the capacity to add new modules as your business evolves.</p>
           </CardContent>
         </Card>
       </Box>
