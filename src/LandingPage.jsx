@@ -3,7 +3,6 @@ import { Container, Typography, Button, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import { keyframes } from "@mui/system";
 import SectionWithCards from "./Components/SectionWithCards";
-import ThirdSection from "./Components/ThirdSection";
 import MyForm from "./Components/MyForm";
 import Footer from "./Components/Footer";
 
@@ -147,10 +146,10 @@ const LandingPage = () => {
         <div className="pt-[16.50px] flex flex-col items-center gap-[48.50px]">
           <div className="self-stretch flex flex-col justify-start items-center gap-6">
             <div className="self-stretch text-center">
-              <span className="text-white text-7xl font-semibold font-poppins">
+              <span className="text-white text-6xl font-semibold font-poppins">
                 Empowering <br /> Businesses with &nbsp;
               </span>
-              <span className="text-[#7166be] text-7xl font-semibold font-poppins">
+              <span className="text-[#7166be] text-6xl font-semibold font-poppins">
                 AI-
                 <br />
                 PPE Solutions
@@ -173,10 +172,10 @@ const LandingPage = () => {
         </div>
       </div>
       {/* </div> */}
-      <div className="mx-10 py-8 flex flex-col flex-wrap gap-16">
-        <div className="flex flex-wrap gap-8 justify-between items-center">
+      <div className="py-8 flex flex-col flex-wrap gap-16">
+        <div className="flex flex-wrap gap-8 justify-center items-center ">
           <img src="/M.png" alt="img" />
-          <div className="w-[600px]">
+          <div className="lg:w-[45%] sm:w-full px-4">
             <div className="text-center">
               <span className="text-[#7166be] text-5xl font-semibold font-poppins">
                 50% Boost
@@ -192,10 +191,10 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap justify-between gap-8 items-center md:gap-8">
-          <img src="/M1.png" alt="img" className="block md:hidden" />
+        <div className="flex flex-wrap justify-center gap-8 items-center md:gap-8">
+          <img src="/M1.png" alt="img" className="block lg:hidden" />
 
-          <div className="w-[600px]">
+          <div className="lg:w-[45%] sm:w-full px-4">
             <div className="text-center">
               <span className="text-[#7166be] text-5xl font-semibold font-poppins">
                 50% Increase
@@ -210,12 +209,12 @@ const LandingPage = () => {
               leading to a significant boost in sales.
             </div>
           </div>
-          <img src="/M1.png" alt="img" className="hidden md:block" />
+          <img src="/M1.png" alt="img" className="hidden lg:block" />
         </div>
       </div>
       {/* Form Section */}
-      <div className="px-40 py-9 flex flex-wrap p-8 w-full">
-        <div className="w-[40%] pt-8">
+      <div className="flex items-start justify-center flex-wrap p-8 w-full">
+        <div className="lg:w-[40%] sm:w-full pt-8">
           <span className="text-[#1c154f] text-2xl font-semibold font-poppins">
             Speak with a <br />
           </span>
@@ -225,7 +224,7 @@ const LandingPage = () => {
           <span className="text-[#1c154f] text-2xl font-semibold font-poppins">
             Today
           </span>
-          <p className="w-full md:w-[55%] text-justify text-[#949494] text-base font-normal font-poppins mt-4">
+          <p className="w-full text-justify text-[#949494] font-normal font-poppins mt-4 word-wrap">
             At Sway AI, we specialize in AI-powered solutions that streamline
             your operations. Whether you’re looking to enhance workplace safety
             or gain real-time insights, our team is here to guide you with
@@ -236,21 +235,17 @@ const LandingPage = () => {
           </p>
         </div>
 
-        <div className="flex items-center justify-center w-[60%]">
+        <div className="flex items-center justify-center lg:w-[60%] sm:w-full">
           <MyForm />
         </div>
       </div>
-      <div className="flex flex-col flex-wrap items-center justify-center gap-8">
-        <div className="w-[524px] text-center text-[#42c09a] text-[40px] font-semibold font-poppins leading-[48px]">
+      <div className="flex flex-col flex-wrap items-center justify-center gap-12">
+        <div className="lg:w-[35%] sm:w-full text-center text-[#42c09a] text-[40px] font-semibold font-poppins p-4">
           Enjoy Using Customize & Train with Ease, No-Code AI Modules
         </div>
         <div className="h-16 flex-col justify-start items-start inline-flex">
-          <div className="w-[415px] h-16 px-5 py-2.5 bg-gradient-to-r from-[#534998] to-[#42c09a] rounded-[10px] shadow border-2 flex-col justify-center items-center flex">
-            <div className="rounded justify-start items-center gap-2 inline-flex">
-              <div className="text-center text-white text-2xl font-normal font-poppins leading-normal">
+          <div className="h-16 px-5 py-2.5 bg-gradient-to-r from-[#534998] to-[#42c09a] rounded-[10px] shadow border-2 flex-col justify-center items-center flex text-center text-white text-2xl font-normal font-poppins">
                 Schedule a Demo
-              </div>
-            </div>
           </div>
         </div>
       </div>

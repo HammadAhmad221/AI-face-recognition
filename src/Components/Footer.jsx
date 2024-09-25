@@ -1,3 +1,5 @@
+import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+
 const Footer = () => {
   return (
     <footer className="bg-[#130c44] text-white py-10 mt-8">
@@ -12,8 +14,8 @@ const Footer = () => {
           </div>
 
           {/* Section 2: Our Modules */}
-          <div>
-            <h2 className="text-lg font-semibold mb-4">Our Modules</h2>
+          <div className='text-center'>
+            <h2 className="text-lg font-semibold mb-4 text-[#42c09a]">Our Modules</h2>
             <ul className="space-y-2">
               <li>
                 <a href="/module1" className="hover:underline">
@@ -29,8 +31,8 @@ const Footer = () => {
           </div>
 
           {/* Section 3: Pages */}
-          <div>
-            <h2 className="text-lg font-semibold mb-4">Pages</h2>
+          <div className='text-center'>
+            <h2 className="text-lg font-semibold mb-4 text-[#42c09a]">Pages</h2>
             <ul className="space-y-2">
               <li>
                 <a href="/about" className="hover:underline">
@@ -47,24 +49,34 @@ const Footer = () => {
 
           {/* Section 4: Follow Us */}
           <div>
-            <h2 className="text-lg font-semibold mb-4">Follow Us</h2>
-            <ul className="space-y-2">
-              <li>
-                <a href="https://facebook.com" className="hover:underline">
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com" className="hover:underline">
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com" className="hover:underline">
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
+            <h2 className="text-lg font-semibold mb-4 text-center text-[#42c09a]">Follow Us</h2>
+            <ul className="flex justify-center gap-12">
+        <li>
+          <a
+            href="https://facebook.com"
+            className="flex items-center space-x-2 hover:underline"
+          >
+            <FaFacebook className='text-4xl' />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com"
+            className="flex items-center justify-center pt-2 space-x-2 hover:underline"
+          >
+            {/* <TbLetterX className="text-4xl" /> */}
+            <img src="/twitterXicon.png" alt="X" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://linkedin.com"
+            className="flex items-center space-x-2 hover:underline"
+          >
+            <FaLinkedin className="text-4xl" />
+          </a>
+        </li>
+      </ul>
           </div>
         </div>
       </div>
