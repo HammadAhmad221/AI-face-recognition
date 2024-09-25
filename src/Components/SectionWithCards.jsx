@@ -263,14 +263,15 @@ const SectionWithCards = () => {
           gap: 3, // Space between cards
         }}
       >
-
+        {/* Card 1 */}
         <Card
           sx={{
-            width: { xs: "90%", md: "70%" }, 
+            width: { xs: "90%", md: "70%" }, // Adjust card width based on screen size
             height: 150,
             transition: "transform 0.3s ease-in-out",
+            transform: "scale(1) rotate(-5deg)",
             "&:hover": {
-              transform: "scale(1.05)", 
+              transform: "scale(1.05)", // Slight scaling effect on hover
             },
           }}
         >
@@ -288,7 +289,7 @@ const SectionWithCards = () => {
           </CardContent>
         </Card>
 
-
+        {/* Card 2 */}
         <Card
           sx={{
             width: { xs: "90%", md: "70%" },
@@ -313,14 +314,13 @@ const SectionWithCards = () => {
           </CardContent>
         </Card>
 
-
+        {/* Card 3 */}
         <Card
           sx={{
             width: { xs: "90%", md: "70%" },
             height: 150,
             transition: "transform 0.3s ease-in-out",
-            zIndex: 3,
-                        transform: "scale(1) rotate(-5deg)",
+            transform: "scale(1) rotate(-5deg)",
             "&:hover": {
               transform: "scale(1.05)",
             },
