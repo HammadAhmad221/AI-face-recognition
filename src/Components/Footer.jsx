@@ -1,8 +1,10 @@
-import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaLinkedin } from 'react-icons/fa';
+import { TbLetterX } from 'react-icons/tb';
+
 
 const Footer = () => {
   return (
-    <footer className="bg-[#130c44] text-white py-10 mt-8">
+    <footer className="bg-[#130c44] text-white py-10 relative z-50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Section 1: Site Name and Logo */}
@@ -62,10 +64,10 @@ const Footer = () => {
         <li>
           <a
             href="https://twitter.com"
-            className="flex items-center justify-center pt-2 space-x-2 hover:underline"
+            className="flex items-center justify-center space-x-2 hover:underline"
           >
-            {/* <TbLetterX className="text-4xl" /> */}
-            <img src="/twitterXicon.png" alt="X" />
+            <TbLetterX className="text-4xl" />
+            {/* <img src="/twitterXicon.png" alt="X" /> */}
           </a>
         </li>
         <li>
