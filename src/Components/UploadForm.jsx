@@ -389,7 +389,7 @@ const UploadForm = () => {
 
   return (
     <>
-      <div className='h-[81vh] flex items-center justify-center '          
+      <div className='h-[80.40vh] flex items-center justify-center '          
         style={{
           background: "linear-gradient(0deg, rgba(37, 30, 84, 0.96) 0%, rgba(37, 30, 84, 0.96) 100%)",
         }}>

@@ -14,7 +14,6 @@ const Footer = () => {
               AI vision for a smarter tomorrow
             </p>
           </div>
-
           {/* Section 2: Our Modules */}
           <div className='text-center'>
             <h2 className="text-lg font-semibold mb-4 text-[#42c09a]">Our Modules</h2>
@@ -31,7 +30,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
           {/* Section 3: Pages */}
           <div className='text-center'>
             <h2 className="text-lg font-semibold mb-4 text-[#42c09a]">Pages</h2>

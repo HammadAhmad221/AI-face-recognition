@@ -34,7 +34,7 @@ const Header = () => {
       }}
     >
       <Toolbar>
-        <Typography
+        {/* <Typography
           variant="h4"
           component="div"
           sx={{
@@ -43,6 +43,20 @@ const Header = () => {
             fontSize: "2rem",
             fontWeight: "700",
             gap: "2rem",
+          }}
+        >
+          SWAY AI
+        </Typography> */}
+        <Typography
+          variant="h4"
+          component={Link}
+          to='/'
+          onClick={()=>{navigate('/')}}
+          sx={{
+            flexGrow: 1,
+            fontFamily: "Inria Sans",
+            fontSize: "2rem",
+            fontWeight: "700",
           }}
         >
           SWAY AI
@@ -129,19 +143,25 @@ const Header = () => {
         )}
 
         {/* Drawer for mobile view */}
-        <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer}>
+        <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer}   PaperProps={{
+    sx: {
+      backgroundColor: "transparent",
+      zIndex:10,
+      backdropFilter: "blur(5px)",
+    },
+  }}>
           <List>
             <ListItem button component={Link} to="/form" onClick={toggleDrawer}>
-              <ListItemText primary="Wht Sway AI ?" />
+              <ListItemText primary="Wht Sway AI ?" sx={{ color: 'white' }}/>
             </ListItem>
             <ListItem button component={Link} to="/ppe-module" onClick={toggleDrawer}>
-              <ListItemText primary="PPE Module" />
+              <ListItemText primary="PPE Module" sx={{ color: 'white' }}/>
             </ListItem>
             <ListItem button component={Link} to="/attendance-module" onClick={toggleDrawer}>
-              <ListItemText primary="Attendance Module" />
+              <ListItemText primary="Attendance Module" sx={{ color: 'white' }}/>
             </ListItem>
             <ListItem button component={Link} to="#" onClick={toggleDrawer}>
-              <ListItemText primary="Schedule A Demo" />
+              <ListItemText primary="Schedule A Demo" sx={{ color: 'white' }}/>
             </ListItem>
             <ListItem
               button
@@ -155,9 +175,6 @@ const Header = () => {
                   backgroundColor: "#534998",
                   color: "white",
                   width: "100%",
-                  "&:hover": {
-                    backgroundColor: "#ff79b0",
-                  },
                 }}
               >
                 Contact

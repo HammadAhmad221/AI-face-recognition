@@ -141,7 +141,6 @@ const LandingPage = () => {
         </Container>
       </Box>
       <SectionWithCards />
-      {/* PPE Module Section */}
       <div className="w-full h-[842px] bg-[#130D44] flex items-center justify-center max-[1000px]:hidden">
         <div className="pt-[16.50px] flex flex-col items-center gap-[48.50px]">
           <div className="self-stretch flex flex-col justify-start items-center gap-6">
@@ -172,7 +171,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="sm:flex flex-col items-center justify-center lg:hidden bg-[#130c44]">
-      <div class="lg:w-[50%] sm:w-full text-center"><span className="text-white text-[32px] font-semibold font-poppins">AI-Driven PPE Monitoring: </span><span style={{
+      <div className="lg:w-[50%] sm:w-full text-center"><span className="text-white text-[32px] font-semibold font-poppins">AI-Driven PPE Monitoring: </span><span style={{
               background:
                 "linear-gradient(90deg, #7266BE 0%, #63B1A7 64.58%, #42C09A 100%)",
               backgroundClip: "text",
@@ -184,8 +183,6 @@ const LandingPage = () => {
 <video autoPlay loop muted src="/vedio1.mp4" type="video/mp4" className="rounded-xl"></video>
 </div>
       </div>      
-      {/* </div> */}
-      {/*First Images Section of MC*/}
       <div className="py-8 flex flex-col flex-wrap gap-16">
         <div className="flex flex-wrap gap-8 justify-center items-center ">
           <img src="/M.png" alt="img" />
@@ -226,36 +223,6 @@ const LandingPage = () => {
           <img src="/M4.png" alt="img" className="hidden lg:block" />
         </div>
       </div>
-      {/* Attandance Module Section */}
-      {/* <div className="w-full h-[842px] bg-[#130D44] flex items-center justify-center max-[1000px]:hidden">
-        <div className="pt-[16.50px] flex flex-col items-center gap-[48.50px]">
-          <div className="self-stretch flex flex-col justify-start items-center gap-6">
-            <div className="self-stretch text-center">
-              <span className="text-white text-6xl font-semibold font-poppins">
-                Empowering <br /> Businesses with &nbsp;
-              </span>
-              <span className="text-[#7166be] text-6xl font-semibold font-poppins">
-                AI-
-                <br />
-                Attendance Solutions
-              </span>
-            </div>
-            <div className="w-[50%] text-center text-white text-xl font-medium font-poppins leading-normal">
-              Our modules streamline attendance tracking and PPE detection,
-              giving you the tools to enhance safety and productivity.
-            </div>
-          </div>
-          <div className="flex flex-col justify-start items-start">
-            <div className=" px-5 py-2.5 bg-gradient-to-r from-[#534998] to-[#42c09a] rounded-[10px] shadow border-2 flex flex-col justify-center items-center">
-              <div className="rounded flex justify-start items-center gap-2">
-                <div className="text-center text-white text-2xl font-normal font-poppins">
-                  Schedule a Demo
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
       <div className="w-full h-[842px] bg-[#130D44] flex items-center justify-center max-[1000px]:hidden">
         <div className="pt-[16.50px] flex flex-col items-center gap-[48.50px]">
           <div className="self-stretch flex flex-col justify-start items-center gap-6">
@@ -285,7 +252,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="sm:flex flex-col items-center justify-center lg:hidden bg-[#130c44]">
-      <div class="lg:w-[50%] sm:w-full text-center"><span className="text-white text-[32px] font-semibold font-poppins">AI-Driven Attendance Tracking: </span><span style={{
+      <div className="lg:w-[50%] sm:w-full text-center"><span className="text-white text-[32px] font-semibold font-poppins">AI-Driven Attendance Tracking: </span><span style={{
               background:
                 "linear-gradient(90deg, #7266BE 0%, #63B1A7 64.58%, #42C09A 100%)",
               backgroundClip: "text",
@@ -297,7 +264,6 @@ const LandingPage = () => {
 <video autoPlay loop muted src="/vedio2.mp4" type="video/mp4" className="rounded-xl"></video>
 </div>
 </div> 
-      {/* Second Images Section of MC */}
       <div className="py-8 flex flex-col flex-wrap gap-16">
         <div className="flex flex-wrap gap-8 justify-center items-center ">
           <img src="/M2.png" alt="img" />
@@ -338,7 +304,6 @@ const LandingPage = () => {
           <img src="/M1.png" alt="img" className="hidden lg:block" />
         </div>
       </div>
-      {/* Form Section */}
       <div className="flex items-start justify-center flex-wrap p-8 w-full">
         <div className="lg:w-[40%] sm:w-full pt-8">
           <span className="text-[#1c154f] text-2xl font-semibold font-poppins">
