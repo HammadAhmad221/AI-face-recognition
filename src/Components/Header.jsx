@@ -18,7 +18,6 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  // Check if the screen size is less than or equal to 800px
   const isMobile = useMediaQuery("(max-width: 1000px)");
 
   const toggleDrawer = () => {
@@ -78,7 +77,7 @@ const Header = () => {
             <Button
               color="inherit"
               component={Link}
-              to="#"
+              to="/ppe-module"
               sx={{
                 fontFamily: "Poppins",
                 fontSize: "1rem",
@@ -90,7 +89,7 @@ const Header = () => {
             <Button
               color="inherit"
               component={Link}
-              to="/home"
+              to="/attendance-module"
               sx={{
                 fontFamily: "Poppins",
                 fontSize: "1rem",
@@ -102,7 +101,7 @@ const Header = () => {
             <Button
               color="inherit"
               component={Link}
-              to="#"
+              to="/form"
               sx={{
                 fontFamily: "Poppins",
                 fontSize: "1rem",
@@ -122,9 +121,6 @@ const Header = () => {
                 fontFamily: "Poppins",
                 fontSize: "1rem",
                 fontWeight: "500",
-                "&:hover": {
-                  backgroundColor: "#ff79b0",
-                },
               }}
             >
               Contact
@@ -135,13 +131,13 @@ const Header = () => {
         {/* Drawer for mobile view */}
         <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer}>
           <List>
-            <ListItem button component={Link} to="#" onClick={toggleDrawer}>
+            <ListItem button component={Link} to="/form" onClick={toggleDrawer}>
               <ListItemText primary="Wht Sway AI ?" />
             </ListItem>
-            <ListItem button component={Link} to="#" onClick={toggleDrawer}>
+            <ListItem button component={Link} to="/ppe-module" onClick={toggleDrawer}>
               <ListItemText primary="PPE Module" />
             </ListItem>
-            <ListItem button component={Link} to="/home" onClick={toggleDrawer}>
+            <ListItem button component={Link} to="/attendance-module" onClick={toggleDrawer}>
               <ListItemText primary="Attendance Module" />
             </ListItem>
             <ListItem button component={Link} to="#" onClick={toggleDrawer}>

@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Container, Typography, Button, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import { keyframes } from "@mui/system";
-import SectionWithCards from "./Components/SectionWithCards";
-import MyForm from "./Components/MyForm";
+import SectionWithCards from "./Components/CardsSection";
+import MyForm from "./Components/LandingPageForm";
 import Footer from "./Components/Footer";
 
 const LandingPage = () => {
@@ -381,7 +381,6 @@ const LandingPage = () => {
       <img src="/chatbotAbove.png" alt="image" className="rounded-xl absolute top-44 right-36"/>
       </div>
       </div>
-      {/* <ThirdSection /> */}
       <Footer />
     </>
   );

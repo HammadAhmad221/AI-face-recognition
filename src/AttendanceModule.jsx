@@ -42,7 +42,12 @@ const AttendanceModule = () => {
   },[])
 
   return (
-    <Box sx={{ padding: 2 }}>
+<div    
+ style={{
+        background:
+          "linear-gradient(0deg, rgba(37, 30, 84, 0.96) 0%, rgba(37, 30, 84, 0.96) 100%)",
+      }}>
+<Box sx={{ padding: 2 }}>
       <Grid container spacing={2}>
         {/* Full-Width Video */}
         <Grid item xs={12}>
@@ -138,6 +143,7 @@ const AttendanceModule = () => {
         </DialogActions>
       </Dialog>
     </Box>
+</div>
   );
 };
 

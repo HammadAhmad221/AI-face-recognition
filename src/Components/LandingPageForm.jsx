@@ -1,127 +1,3 @@
-// import { useState } from "react";
-// import {
-//   Box,
-//   TextField,
-//   Button,
-//   Dialog,
-//   DialogTitle,
-//   DialogContent,
-//   Typography,
-//   TextareaAutosize,
-//   FormControl,
-// } from "@mui/material";
-
-// import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-
-// const MyForm = () => {
-//   const [openModal, setOpenModal] = useState(false);
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     setOpenModal(true);
-//   };
-
-//   const handleCloseModal = () => {
-//     setOpenModal(false);
-//   };
-
-//   return (
-//     <>
-//       <Box
-//         component="form"
-//         noValidate
-//         autoComplete="off"
-//         onSubmit={handleSubmit}
-//         sx={{
-//           width: "80%",
-//           textAlign: "center",
-//           p: 4,
-//           borderRadius: 2,
-//         }}
-//       >
-//         <TextField
-//           fullWidth
-//           margin="normal"
-//           label="Full Name"
-//           variant="outlined"
-//           placeholder="Full Name"
-//         />
-
-//         <TextField
-//           fullWidth
-//           margin="normal"
-//           label="Email"
-//           variant="outlined"
-//           placeholder="E-mail"
-//           type="email"
-//         />
-
-//         <TextField
-//           fullWidth
-//           margin="normal"
-//           label="Organisation name"
-//           variant="outlined"
-//           placeholder="Organisation name"
-//         />
-//         <TextField
-//           fullWidth
-//           margin="normal"
-//           label="Phone number"
-//           variant="outlined"
-//           placeholder="Phone number"
-//         />
-
-//         <TextField
-//           fullWidth
-//           margin="normal"
-//           label="How we can Help"
-//           variant="outlined"
-//           placeholder="How we can Help"
-//         />
-
-//         <TextField
-//           fullWidth
-//           margin="normal"
-//           label="Government sector"
-//           variant="outlined"
-//           placeholder="Government sector"
-//         />
-
-//         <FormControl>
-//           <TextareaAutosize placeholder="Send us a message ...." minRows={2} />
-//         </FormControl>
-//         <Button
-//           variant="contained"
-//           color="secondary"
-//           type="submit"
-//           sx={{ mt: 2 }}
-//         >
-//           Submit
-//         </Button>
-//       </Box>
-
-//       <Dialog open={openModal} onClose={handleCloseModal}>
-//         <DialogTitle sx={{ textAlign: "center" }}>
-//           <CheckCircleIcon sx={{ fontSize: 60, color: "green" }} />
-//         </DialogTitle>
-//         <DialogContent sx={{ textAlign: "center" }}>
-//           <Typography variant="h6">Form Submitted Successfully!</Typography>
-//           <Button
-//             variant="contained"
-//             color="primary"
-//             onClick={handleCloseModal}
-//             sx={{ mt: 2 }}
-//           >
-//             Close
-//           </Button>
-//         </DialogContent>
-//       </Dialog>
-//     </>
-//   );
-// };
-
-// export default MyForm;
-
 import { useState } from "react";
 import {
   Box,
@@ -139,7 +15,7 @@ import {
 
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-const MyForm = () => {
+const Form = () => {
   const [openModal, setOpenModal] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -327,4 +203,4 @@ const MyForm = () => {
   );
 };
 
-export default MyForm;
+export default Form;

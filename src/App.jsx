@@ -1,24 +1,10 @@
-// import Dashboard from './Dashboard';
-// import './App.css'
-// // import VideoFeed from './VedioFeed';
-
-// function App() {
-//   return (
-//     <>
-// <Dashboard/>
-// {/* <VideoFeed/> */}
-//     </>
-//   )
-// }
-
-// export default App
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './LandingPage';
 import Header from './Components/Header';
-import HomePage from './HomePage';
-import Form from "./Components/MyForm";
+import AttendanceModule from './AttendanceModule';
+import UploadForm from "./Components/UploadForm";
+import PPEModule from './PPEModule';
 
 const App = () => {
   return (
@@ -27,8 +13,10 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/attendance-module" element={<HomePage />} />
-          <Route path="/form" element={<Form/>} />
+          <Route path="/attendance-module" element={<AttendanceModule />} />
+          <Route path="/ppe-module" element={<PPEModule />} />
+          <Route path="/form" element={<UploadForm/>} />
+
         </Routes>
       </main>
     </Router>
