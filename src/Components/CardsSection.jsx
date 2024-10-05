@@ -1,7 +1,10 @@
 import React from "react";
 import { Container, Typography, Box, Card, CardContent } from "@mui/material";
+import { useTranslation } from 'react-i18next';
+
 
 const SectionWithCards = () => {
+  const { t } = useTranslation();
   return (
     <Box
       sx={{
@@ -35,9 +38,12 @@ const SectionWithCards = () => {
             fontWeight: 600,
           }}
         >
-          Transform Your
-          <br /> Business With Future
-          <br />
+          {/* Transform Your */}
+          {t("csh")}
+          {/* <br />  */}
+          {/* Business With Future */}
+          {/* {t("csh2")} */}
+          &nbsp;
           <span
             style={{
               background:
@@ -48,7 +54,8 @@ const SectionWithCards = () => {
               marginTop: "24px",
             }}
           >
-            AI Solutions
+            {/* AI Solutions */}
+            {t("cshc")}
           </span>
         </Typography>
         <Typography
@@ -61,11 +68,16 @@ const SectionWithCards = () => {
             fontWeight: 500,
             lineHeight: "24px",
             marginTop: "24px",
+            xs:"100%",
+            lg:"50%"
+
           }}
         >
-          Empower your business to grow without limits. Our AI <br /> tool
-          integrates seamlessly into your existing
-          <br /> systems, providing
+          {/* Empower your business to grow without limits. Our AI 
+          <br /> 
+          tool integrates seamlessly into your existing
+          <br /> systems, providing */}
+          {t("csp")}
         </Typography>
       </Container>
 
@@ -96,12 +108,14 @@ const SectionWithCards = () => {
             <div className="flex gap-2">
               <img src="/Group.svg" alt="Icon" />
               <h3 className="text-[#1c144e] text-2xl font-semibold font-[Poppins]">
-                Automation of Repetitive Tasks
+                {/* Automation of Repetitive Tasks */}
+                {t("c1h")}
               </h3>
             </div>
             <p className="text-justify text-[#838383] text-base font-medium font-[Poppins]">
-              Eliminate time-consuming manual processes by automating repetitive
-              tasks, allowing your team to focus on.
+              {/* Eliminate time-consuming manual processes by automating repetitive
+              tasks, allowing your team to focus on. */}
+              {t("c1p")}
             </p>
           </CardContent>
         </Card>
@@ -121,12 +135,14 @@ const SectionWithCards = () => {
             <div className="flex gap-2">
               <img src="/Group1.svg" alt="Icon" />
               <h3 className="text-[#1c144e] text-2xl font-semibold font-[Poppins]">
-                Scalable AI Infrastructure
+                {/* Scalable AI Infrastructure */}
+                {t("c2h")}
               </h3>
             </div>
             <p className="text-justify text-[#838383] text-base font-medium font-[Poppins]">
-              Seamlessly integrates into your existing systems, with the
-              capacity to add new modules as your business evolves.
+              {/* Seamlessly integrates into your existing systems, with the
+              capacity to add new modules as your business evolves. */}
+                {t("c2p")}
             </p>
           </CardContent>
         </Card>
@@ -147,12 +163,14 @@ const SectionWithCards = () => {
             <div className="flex gap-2">
               <img src="/Group2.svg" alt="Icon" />
               <h3 className="text-[#1c144e] text-2xl font-semibold font-[Poppins]">
-                Data-Driven Insights
+                {/* Data-Driven Insights */}
+                {t("c3h")}
               </h3>
             </div>
             <p className="text-justify text-[#838383] text-base font-medium font-[Poppins]">
-              Seamlessly integrates into your existing systems, with the
-              capacity to add new modules as your business evolves.
+              {/* Seamlessly integrates into your existing systems, with the
+              capacity to add new modules as your business evolves. */}
+                {t("c3p")}
             </p>
           </CardContent>
         </Card>

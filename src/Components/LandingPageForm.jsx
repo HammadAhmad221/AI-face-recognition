@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import {
   Box,
   TextField,
@@ -16,6 +17,8 @@ import {
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 const Form = () => {
+  const { t } = useTranslation();
+
   const [openModal, setOpenModal] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -62,10 +65,10 @@ const Form = () => {
           <Grid item xs={12}>
             <TextField
               fullWidth
-              label="Full Name"
+              // label={t("name")}
               name="fullName"
               variant="outlined"
-              placeholder="Enter your full name"
+              placeholder={t("name")}
               value={formData.fullName}
               onChange={handleInputChange}
               required
@@ -75,10 +78,10 @@ const Form = () => {
           <Grid item xs={12}>
             <TextField
               fullWidth
-              label="Email"
+              // label="Email"
               name="email"
               variant="outlined"
-              placeholder="Enter your email"
+              placeholder={t("email")}
               type="email"
               value={formData.email}
               onChange={handleInputChange}
@@ -89,10 +92,10 @@ const Form = () => {
           <Grid item xs={12}>
             <TextField
               fullWidth
-              label="Organization Name"
+              // label="Organization Name"
               name="organization"
               variant="outlined"
-              placeholder="Enter your organization name"
+              placeholder={t("organization")}
               value={formData.organization}
               onChange={handleInputChange}
               required
@@ -102,10 +105,10 @@ const Form = () => {
           <Grid item xs={12}>
             <TextField
               fullWidth
-              label="Phone Number"
+              // label="Phone Number"
               name="phone"
               variant="outlined"
-              placeholder="Enter your phone number"
+              placeholder={t("phone")}
               value={formData.phone}
               onChange={handleInputChange}
               required
@@ -115,10 +118,10 @@ const Form = () => {
           <Grid item xs={12}>
             <TextField
               fullWidth
-              label="How Can We Help?"
+              // label="How Can We Help?"
               name="help"
               variant="outlined"
-              placeholder="Describe how we can assist you"
+              placeholder={t("help")}
               value={formData.help}
               onChange={handleInputChange}
               required
@@ -128,10 +131,10 @@ const Form = () => {
           <Grid item xs={12}>
             <TextField
               fullWidth
-              label="Government Sector"
+              // label="Government Sector"
               name="sector"
               variant="outlined"
-              placeholder="Enter the government sector"
+              placeholder={t("sector")}
               value={formData.sector}
               onChange={handleInputChange}
               required
@@ -144,7 +147,7 @@ const Form = () => {
               <TextareaAutosize
                 id="message"
                 name="message"
-                placeholder="Write your message here"
+                placeholder={t("message")}
                 minRows={4}
                 value={formData.message}
                 onChange={handleInputChange}
@@ -177,7 +180,8 @@ const Form = () => {
                 },
               }}
             >
-              Send Message
+              {/* Send Message */}
+              {t("formButton")}
             </Button>
           </Grid>
         </Grid>

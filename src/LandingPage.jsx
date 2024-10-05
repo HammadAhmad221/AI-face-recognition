@@ -8,7 +8,8 @@ import Footer from "./Components/Footer";
 import { useTranslation } from 'react-i18next';
 
 const LandingPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === 'ar';
   const slideInFromTop = keyframes`
   0% { transform: translateY(-100%); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
@@ -20,12 +21,12 @@ const LandingPage = () => {
 `;
   const headings = [
     {
-      text: "Increase Productivity",
+      text: t("hsa1"),
       color: "linear-gradient(90deg, #42C09A 0%, #ECFF76 100%)",
       animation: slideInFromTop,
     },
     {
-      text: 'Ensure Workplace Safety"',
+      text: t("hsa1"),
       color: "linear-gradient(90deg, #FA4CF3 0%, #FFFFFF 100%)",
       animation: slideInFromBottom,
     },
@@ -97,9 +98,11 @@ const LandingPage = () => {
               fontWeight: 700,
             }}
           >
-            Unlock Your Business
+            {/* Unlock Your Business */}
+            {t('hsh1')}
             <br />
-            Potential With AI:
+            {/* Potential With AI: */}
+            {t('hsh2')}
           </Typography>
           <Typography
             variant="h2"
@@ -138,7 +141,8 @@ const LandingPage = () => {
               },
             }}
           >
-            Schedule a Demo
+            {/* Schedule a Demo */}
+            {t("hsb")}
           </Button>
         </Container>
       </Box>
@@ -173,12 +177,14 @@ const LandingPage = () => {
         </div>
       </div> */}
       <div className="w-full h-[750px] bg-[url('/backroundb.png')] lg:flex flex-col items-center overflow-y-auto scrollbar-hide max-[1000px]:hidden relative">
-      {/* <div class="absolute inset-0 bg-gray-500 opacity-50"></div> */}
+      <div className="absolute w-full h-full inset-0 bg-[#130D44] opacity-80"></div>
         <div className="pt-[16.50px] min-h-[750px] flex flex-col items-center justify-center gap-[48.50px]">
           <div className="self-stretch flex flex-col justify-start items-center gap-6">
             <div className="self-stretch text-center">
-              <span className="text-white text-6xl font-semibold font-poppins">
-                Empowering <br /> Businesses with &nbsp;
+              <span className="text-white text-6xl font-semibold font-poppins w-[50%] z-10 relative">
+                {/* Empowering Businesses with  */}
+                {t("ppeh")}
+                &nbsp;
               </span>
               <span
                 style={{
@@ -189,31 +195,33 @@ const LandingPage = () => {
                   WebkitTextFillColor: "transparent",
                   marginTop: "24px",
                 }}
-                className="text-6xl font-semibold font-poppins"
-              >
-                AI-
-                <br />
-                PPE Solutions
+                className="text-6xl font-semibold font-poppins z-10 relative"
+              ><br/>
+                {/* AI-PPE Solutions */}
+                {t("ppehc")}
               </span>
             </div>
-            <div className="w-[50%] text-center text-white text-xl font-medium font-poppins leading-normal">
-              Our modules streamline attendance tracking and PPE detection,
-              giving you the tools to enhance safety and productivity.
+            <div className="w-[50%] text-center text-white text-xl font-medium font-poppins leading-normal z-10 relative">
+              {/* Our modules streamline attendance tracking and PPE detection,
+              giving you the tools to enhance safety and productivity. */}
+              {t("ppep")}
             </div>
           </div>
-          <div className="flex flex-col justify-start items-start">
+          <div className="flex flex-col justify-start items-start z-10 relative">
             <div className="px-5 py-2.5 bg-gradient-to-r from-[#534998] to-[#42c09a] rounded-[10px] shadow border-2 flex flex-col justify-center items-center">
               <div className="rounded flex justify-start items-center gap-2">
                 <div className="text-center text-white text-2xl font-normal font-poppins">
-                  Schedule a Demo
+                  {/* Schedule a Demo */}
+                  {t("hsb")}
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="w-full min-h-[750px] flex justify-end items-center relative px-32">
+      <div className="absolute w-full h-full inset-0 bg-[#130D44] opacity-80"></div>
           <div>
-            <div className="absolute z-10 lg:left-20 lg:bottom-80">
+            <div className={`absolute z-10 lg:bottom-80 ${isRTL ? 'lg:right-20' : 'lg:left-20'}`}>
               <span className="text-white text-5xl font-semibold font-poppins">
                 AI-Driven PPE Monitoring:
               </span>
@@ -285,16 +293,19 @@ const LandingPage = () => {
           <div className="lg:w-[45%] sm:w-full px-4">
             <div className="text-center">
               <span className="text-[#7166be] text-5xl font-semibold font-poppins">
-                50% Boost
+                {/* 50% Boost */}
+                {t("boost")}
                 <br />
               </span>
               <span className="text-[#1c154f] text-5xl font-semibold font-poppins">
-                in Sales.
+                {/* in Sales. */}
+                {t("sales")}
               </span>
             </div>
             <div className="text-center text-[#1c154f] text-xl font-medium font-poppins word-wrap">
-              Ensuring worker safety makes operations smooth, precise, and fast,
-              leading to a significant boost in sales.
+              {/* Ensuring worker safety makes operations smooth, precise, and fast,
+              leading to a significant boost in sales. */}
+              {t("boostp")}
             </div>
           </div>
         </div>
@@ -304,16 +315,19 @@ const LandingPage = () => {
           <div className="lg:w-[45%] sm:w-full px-4">
             <div className="text-center">
               <span className="text-[#7166be] text-5xl font-semibold font-poppins">
-                50% Increase
+                {/* 50% Increase */}
+                {t("increase")}
                 <br />
               </span>
               <span className="text-[#1c154f] text-5xl font-semibold font-poppins">
-                in Productivity.
+                {/* in Productivity. */}
+                {t("productivity")}
               </span>
             </div>
             <div className="text-center text-[#1c154f] text-xl font-medium font-poppins">
-              Ensuring worker safety makes operations smooth, precise, and fast,
-              leading to a significant boost in sales.
+              {/* Ensuring worker safety makes operations smooth, precise, and fast,
+              leading to a significant boost in sales. */}
+              {t("boostp")}
             </div>
           </div>
           <img src="/M4.png" alt="img" className="hidden lg:block" />
@@ -349,12 +363,15 @@ const LandingPage = () => {
           </div>
         </div>
       </div> */}
-      <div className="w-full h-[750px] bg-[url('/backroundb.png')] lg:flex flex-col items-center overflow-y-auto scrollbar-hide max-[1000px]:hidden">
-        <div className="pt-[16.50px] min-h-[750px] flex flex-col items-center justify-center gap-[48.50px]">
+      <div className="w-full h-[750px] bg-[url('/backroundb.png')] lg:flex flex-col items-center overflow-y-auto scrollbar-hide max-[1000px]:hidden relative">
+      <div className="absolute w-full h-full inset-0 bg-[#130D44] opacity-80"></div>
+        <div className="pt-[16.50px] min-h-[750px] flex flex-col items-center justify-center gap-[48.50px] relative z-10">
           <div className="self-stretch flex flex-col justify-start items-center gap-6">
             <div className="self-stretch text-center">
               <span className="text-white text-6xl font-semibold font-poppins">
-                Empowering <br /> Businesses with &nbsp;
+                {/* Empowering Businesses with  */}
+                {t("ppeh")}
+                &nbsp;
               </span>
               <span
                 style={{
@@ -366,30 +383,33 @@ const LandingPage = () => {
                   marginTop: "24px",
                 }}
                 className="text-6xl font-semibold font-poppins"
-              >
-                AI- <br />
-                Attendance Solutions
+              ><br />
+                {/* AI-Attendance Solutions */}
+                {t("amh")}
               </span>
             </div>
             <div className="w-[50%] text-center text-white text-xl font-medium font-poppins leading-normal">
-              Our modules simplify attendance tracking and optimize efficiency,
+              {/* Our modules simplify attendance tracking and optimize efficiency,
               providing you with the tools to enhance safety and boost
-              productivity.
+              productivity. */}
+              {t("amp")}
             </div>
           </div>
           <div className="flex flex-col justify-start items-start">
             <div className="px-5 py-2.5 bg-gradient-to-r from-[#534998] to-[#42c09a] rounded-[10px] shadow border-2 flex flex-col justify-center items-center">
               <div className="rounded flex justify-start items-center gap-2">
                 <div className="text-center text-white text-2xl font-normal font-poppins">
-                  Schedule a Demo
+                  {/* Schedule a Demo */}
+                  {t("hsb")}
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="w-full min-h-[750px] flex justify-end items-center relative px-32">
+      <div className="absolute w-full h-full inset-0 bg-[#130D44] opacity-80"></div>
           <div>
-            <div className="absolute z-10 lg:left-20 lg:bottom-80">
+            <div className={`absolute z-10 lg:bottom-80 ${isRTL ? 'lg:right-20' : 'lg:left-20'}`}>
               <span className="text-white text-5xl font-semibold font-poppins">
                 AI-Driven Attendance <br /> Tracking:
               </span>
@@ -422,7 +442,7 @@ const LandingPage = () => {
       <div className="sm:flex flex-col items-center justify-center lg:hidden bg-[#130c44]">
         <div className="lg:w-[50%] sm:w-full text-center">
           <span className="text-white text-[32px] font-semibold font-poppins">
-            AI-Driven Attendance Tracking:{" "}
+            AI-Driven Attendance Tracking:
           </span>
           <span
             style={{
@@ -459,16 +479,19 @@ const LandingPage = () => {
           <div className="lg:w-[45%] sm:w-full px-4">
             <div className="text-center">
               <span className="text-[#7166be] text-5xl font-semibold font-poppins">
-                50% Boost
+                {/* 50% Boost */}
+                {t("boost")}
                 <br />
               </span>
               <span className="text-[#1c154f] text-5xl font-semibold font-poppins">
-                in Sales.
+                {/* in Sales. */}
+                {t("sales")}
               </span>
             </div>
             <div className="text-center text-[#1c154f] text-xl font-medium font-poppins word-wrap">
-              Ensuring worker safety makes operations smooth, precise, and fast,
-              leading to a significant boost in sales.
+              {/* Ensuring worker safety makes operations smooth, precise, and fast,
+              leading to a significant boost in sales. */}
+              {t("boostp")}
             </div>
           </div>
         </div>
@@ -478,16 +501,19 @@ const LandingPage = () => {
           <div className="lg:w-[45%] sm:w-full px-4">
             <div className="text-center">
               <span className="text-[#7166be] text-5xl font-semibold font-poppins">
-                50% Increase
+                {/* 50% Increase */}
+                {t("increase")}
                 <br />
               </span>
               <span className="text-[#1c154f] text-5xl font-semibold font-poppins">
-                in Productivity.
+                {/* in Productivity. */}
+                {t("productivity")}
               </span>
             </div>
             <div className="text-center text-[#1c154f] text-xl font-medium font-poppins">
-              Ensuring worker safety makes operations smooth, precise, and fast,
-              leading to a significant boost in sales.
+              {/* Ensuring worker safety makes operations smooth, precise, and fast,
+              leading to a significant boost in sales. */}
+              {t("boostp")}
             </div>
           </div>
           <img src="/M1.png" alt="img" className="hidden lg:block" />
@@ -496,22 +522,27 @@ const LandingPage = () => {
       <div className="flex items-start justify-center flex-wrap p-8 w-full">
         <div className="lg:w-[40%] sm:w-full pt-8">
           <span className="text-[#1c154f] text-2xl font-semibold font-poppins">
-            Speak with a <br />
+            {/* Speak with a  */}
+            {t("speak")}
+            <br />
           </span>
           <span className="text-[#42c09a] text-2xl font-semibold font-poppins">
-            Sawy AI Expert <br />
+            {/* Sawy AI Expert  */}
+            {t("sway")}
+            <br />
           </span>
           <span className="text-[#1c154f] text-2xl font-semibold font-poppins">
-            Today
+            {/* Today */}
+            {t("today")}
           </span>
           <p className="w-full text-justify text-[#949494] font-normal font-poppins mt-4 word-wrap">
-            At Sway AI, we specialize in AI-powered solutions that streamline
+            {/* At Sway AI, we specialize in AI-powered solutions that streamline
             your operations. Whether you’re looking to enhance workplace safety
             or gain real-time insights, our team is here to guide you with
             cutting-edge tools designed for your business needs.
-            <br />
             Fill out the form, and let’s start transforming your processes with
-            the power of AI.
+            the power of AI. */}
+            {t("as")}
           </p>
         </div>
 
@@ -521,11 +552,13 @@ const LandingPage = () => {
       </div>
       <div className="flex flex-col flex-wrap items-center justify-center gap-12">
         <div className="lg:w-[35%] sm:w-full text-center text-[#42c09a] text-[40px] font-semibold font-poppins p-4">
-          Enjoy Using Customize & Train with Ease, No-Code AI Modules
+          {/* Enjoy Using Customize & Train with Ease, No-Code AI Modules */}
+          {t("hbf")}
         </div>
         <div className="h-16 flex-col justify-start items-start inline-flex">
           <div className="h-16 px-5 py-2.5 bg-gradient-to-r from-[#534998] to-[#42c09a] rounded-[10px] shadow border-2 flex-col justify-center items-center flex text-center text-white text-2xl font-normal font-poppins">
-            Schedule a Demo
+            {/* Schedule a Demo */}
+            {t("hsb")}
           </div>
         </div>
       </div>
