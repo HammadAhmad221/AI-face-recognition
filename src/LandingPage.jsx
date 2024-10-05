@@ -5,8 +5,10 @@ import { keyframes } from "@mui/system";
 import SectionWithCards from "./Components/CardsSection";
 import MyForm from "./Components/LandingPageForm";
 import Footer from "./Components/Footer";
+import { useTranslation } from 'react-i18next';
 
 const LandingPage = () => {
+  const { t } = useTranslation();
   const slideInFromTop = keyframes`
   0% { transform: translateY(-100%); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
@@ -170,7 +172,8 @@ const LandingPage = () => {
           </div>
         </div>
       </div> */}
-      <div className="w-full h-[750px] bg-[#130D44] lg:flex flex-col items-center overflow-y-auto scrollbar-hide max-[1000px]:hidden">
+      <div className="w-full h-[750px] bg-[url('/backroundb.png')] lg:flex flex-col items-center overflow-y-auto scrollbar-hide max-[1000px]:hidden relative">
+      {/* <div class="absolute inset-0 bg-gray-500 opacity-50"></div> */}
         <div className="pt-[16.50px] min-h-[750px] flex flex-col items-center justify-center gap-[48.50px]">
           <div className="self-stretch flex flex-col justify-start items-center gap-6">
             <div className="self-stretch text-center">
@@ -346,7 +349,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div> */}
-      <div className="w-full h-[750px] bg-[#130D44] lg:flex flex-col items-center overflow-y-auto scrollbar-hide max-[1000px]:hidden">
+      <div className="w-full h-[750px] bg-[url('/backroundb.png')] lg:flex flex-col items-center overflow-y-auto scrollbar-hide max-[1000px]:hidden">
         <div className="pt-[16.50px] min-h-[750px] flex flex-col items-center justify-center gap-[48.50px]">
           <div className="self-stretch flex flex-col justify-start items-center gap-6">
             <div className="self-stretch text-center">

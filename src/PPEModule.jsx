@@ -5,7 +5,7 @@ const PPEModule = () => {
   const [open, setOpen] = useState(false);
   const [data, setData] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
-  const [videoSrc, setVideoSrc] = useState('/vedio2.mp4');
+  const [videoSrc, setVideoSrc] = useState('/vedio1.mp4');
 
   useEffect(() => {
     // Dummy data with image URLs

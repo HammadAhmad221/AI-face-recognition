@@ -143,41 +143,42 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Avatar, Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography } from '@mui/material';
 
-const PPEModule = () => {
+const AttendanceModule = () => {
   const [open, setOpen] = useState(false);
   const [data, setData] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
-  const [videoSrc, setVideoSrc] = useState('/vedio1.mp4');
+  const [videoSrc, setVideoSrc] = useState('/vedio2.mp4');
 
   useEffect(() => {
+    // Dummy data with image URLs
     const dummyData = [
       {
         id: 1,
         name: 'John Doe',
         date: '2024-09-15',
         time: '10:45 AM',
-        face_image: 'https://randomuser.me/api/portraits/men/1.jpg',
+        face_image: 'https://randomuser.me/api/portraits/men/1.jpg', // Placeholder image
       },
       {
         id: 2,
         name: 'Jane Smith',
         date: '2024-09-16',
         time: '11:30 AM',
-        face_image: 'https://randomuser.me/api/portraits/women/2.jpg',
+        face_image: 'https://randomuser.me/api/portraits/women/2.jpg', // Placeholder image
       },
       {
         id: 3,
         name: 'Alice Johnson',
         date: '2024-09-17',
         time: '02:15 PM',
-        face_image: 'https://randomuser.me/api/portraits/women/3.jpg',
+        face_image: 'https://randomuser.me/api/portraits/women/3.jpg', // Placeholder image
       },
       {
         id: 4,
         name: 'Bob Williams',
         date: '2024-09-18',
         time: '09:00 AM',
-        face_image: 'https://randomuser.me/api/portraits/men/4.jpg',
+        face_image: 'https://randomuser.me/api/portraits/men/4.jpg', // Placeholder image
       },
     ];
 
@@ -201,6 +202,7 @@ const PPEModule = () => {
     >
       <Box sx={{ padding: 2 }}>
         <Grid container spacing={2}>
+          {/* Full-Width Video */}
           <Grid item xs={12}>
             <Box sx={{ position: 'relative' }}>
             <video
@@ -256,9 +258,9 @@ const PPEModule = () => {
         <Dialog
           open={open}
           onClose={handleClose}
-          maxWidth="md"
+          maxWidth="md" // Increase the modal size
           fullWidth
-          sx={{ '& .MuiDialog-paper': { borderRadius: '16px' } }}
+          sx={{ '& .MuiDialog-paper': { borderRadius: '16px' } }} // Add border radius to modal
         >
           <DialogTitle>User Details</DialogTitle>
           <DialogContent>
@@ -301,4 +303,5 @@ const PPEModule = () => {
   );
 };
 
-export default PPEModule;
+export default AttendanceModule;
+

@@ -11,14 +11,20 @@ import {
   ListItemText,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const isMobile = useMediaQuery("(max-width: 1000px)");
+
+  const { t } = useTranslation(); // Initialize translation
+
+
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
@@ -34,19 +40,6 @@ const Header = () => {
       }}
     >
       <Toolbar>
-        {/* <Typography
-          variant="h4"
-          component="div"
-          sx={{
-            flexGrow: 1,
-            fontFamily: "Inria Sans",
-            fontSize: "2rem",
-            fontWeight: "700",
-            gap: "2rem",
-          }}
-        >
-          SWAY AI
-        </Typography> */}
         <Typography
           variant="h4"
           component={Link}
@@ -86,7 +79,8 @@ const Header = () => {
                 fontWeight: "500",
               }}
             >
-              Wht Sway AI ?
+              {/* Wht Sway AI ? */}
+              {t("whatSway")}
             </Button>
             <Button
               color="inherit"
@@ -122,8 +116,10 @@ const Header = () => {
                 fontWeight: "500",
               }}
             >
-              Schedule A Demo
+              {/* Schedule A Demo */}
+              {t("schedule")}
             </Button>
+            <LanguageSwitcher/>
             <Button
               component={Link}
               to="#"
@@ -137,8 +133,15 @@ const Header = () => {
                 fontWeight: "500",
               }}
             >
-              Contact
+              {/* Contact */}
+              {t("contact")}
             </Button>
+            {/* <button
+        className="bg-blue-500 px-4 py-2 rounded"
+        onClick={toggleLanguage}
+      >
+        {i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
+      </button> */}
           </div>
         )}
 
@@ -152,7 +155,7 @@ const Header = () => {
   }}>
           <List>
             <ListItem button component={Link} to="/form" onClick={toggleDrawer}>
-              <ListItemText primary="Wht Sway AI ?" sx={{ color: 'white' }}/>
+              <ListItemText primary={t("whatSway")} sx={{ color: 'white' }}/>
             </ListItem>
             <ListItem button component={Link} to="/ppe-module" onClick={toggleDrawer}>
               <ListItemText primary="PPE Module" sx={{ color: 'white' }}/>
@@ -161,7 +164,7 @@ const Header = () => {
               <ListItemText primary="Attendance Module" sx={{ color: 'white' }}/>
             </ListItem>
             <ListItem button component={Link} to="#" onClick={toggleDrawer}>
-              <ListItemText primary="Schedule A Demo" sx={{ color: 'white' }}/>
+              <ListItemText primary={t("schedule")} sx={{ color: 'white' }}/>
             </ListItem>
             <ListItem
               button
@@ -177,7 +180,8 @@ const Header = () => {
                   width: "100%",
                 }}
               >
-                Contact
+                {/* Contact */}
+                {t("contact")}
               </Button>
             </ListItem>
           </List>
@@ -188,3 +192,65 @@ const Header = () => {
 };
 
 export default Header;
+
+// import React, { useEffect } from 'react';
+
+// const Header = () => {
+//   // setTimeout(() => {
+//   //   window.location.reload(); // Reload the page after a delay
+//   // }, 2000);
+//   useEffect(() => {
+//     // Dynamically inject the Google Translate script
+//     const addGoogleTranslateScript = () => {
+//       const script = document.createElement('script');
+//       script.type = 'text/javascript';
+//       script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+//       document.body.appendChild(script);
+//     };
+
+//     // Initialize the Google Translate element
+//     const googleTranslateElementInit = () => {
+//       new window.google.translate.TranslateElement(
+//         {
+//           pageLanguage: 'en', // Default page language
+//           includedLanguages: 'en,ar', // Languages to support
+//           layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+//         },
+//         'google_translate_element' // The ID of the div where the dropdown will be rendered
+//       );
+
+//       // Hide the Google Translate banner after initialization
+//       const hideTranslateBanner = () => {
+//         const translateBanner = document.querySelector('.goog-te-banner-frame.skiptranslate');
+//         if (translateBanner) {
+//           translateBanner.style.display = 'none'; // Hide the banner
+//         }
+//       };
+
+//       hideTranslateBanner(); // Call it once after initialization
+
+//       // Observe the DOM for changes to hide the banner if it appears later
+//       const observer = new MutationObserver(hideTranslateBanner);
+//       observer.observe(document.body, { childList: true, subtree: true });
+//     };
+
+//     // Check if the Translate script is already loaded
+//     if (!window.google) {
+//       addGoogleTranslateScript();
+//       window.googleTranslateElementInit = googleTranslateElementInit; // Ensure global access
+//     } else {
+//       googleTranslateElementInit();
+//     }
+//   }, []);
+
+//   return (
+//     <header className="flex justify-between items-center p-4 bg-gray-800 text-white">
+//       <h1>Welcome to the Dashboard</h1>
+
+//       {/* Google Translate Dropdown */}
+//       <div id="google_translate_element"></div>
+//     </header>
+//   );
+// };
+
+// export default Header;
