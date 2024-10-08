@@ -203,7 +203,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width: 1000px)");
-  const { t } = useTranslation(); // Initialize translation
+  const { t } = useTranslation();
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
@@ -343,6 +343,7 @@ const Header = () => {
             <ListItem button component={Link} to="#" onClick={toggleDrawer}>
               <ListItemText primary={t("schedule")} sx={{ color: 'white', textTransform: 'capitalize' }} />
             </ListItem>
+            <LanguageSwitcher/>
             <ListItem
               button
               component={Link}

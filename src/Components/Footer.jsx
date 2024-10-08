@@ -41,7 +41,7 @@ const Footer = () => {
             </ul>
           </div>
           {/* Section 3: Pages */}
-          <div className='pl-8'>
+          <div className='lg:pl-8'>
             <h2 className="text-lg font-semibold mb-4 text-[#42c09a]">
               {/* Pages */}
               {t("pages")}

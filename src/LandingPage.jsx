@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 import { Container, Typography, Button, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import { keyframes } from "@mui/system";
+import { FaPlay, FaPause } from 'react-icons/fa';
 import SectionWithCards from "./Components/CardsSection";
 import MyForm from "./Components/LandingPageForm";
 import Footer from "./Components/Footer";
@@ -9,6 +10,17 @@ import { useTranslation } from 'react-i18next';
 
 const LandingPage = () => {
   const { t, i18n } = useTranslation();
+  // Create separate states and refs for each video
+  const [isPlaying1, setIsPlaying1] = useState(false);
+  const [isPlaying2, setIsPlaying2] = useState(false);
+  const [isPlaying3, setIsPlaying3] = useState(false);
+  const [isPlaying4, setIsPlaying4] = useState(false);
+
+  const videoRef1 = useRef(null);
+  const videoRef2 = useRef(null);
+  const videoRef3 = useRef(null);
+  const videoRef4 = useRef(null);
+
   const isRTL = i18n.language === 'ar';
   const slideInFromTop = keyframes`
   0% { transform: translateY(-100%); opacity: 0; }
@@ -40,6 +52,17 @@ const LandingPage = () => {
 
     return () => clearInterval(interval);
   }, [headings.length]);
+
+  const handleVideoToggle = ( videoRef, isPlaying, setIsPlaying) => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause(); // Pause the video
+      } else {
+        videoRef.current.play(); // Play the video
+      }
+      setIsPlaying(!isPlaying); // Toggle the state
+    }
+  };
   return (
     <>
       <Box
@@ -225,7 +248,8 @@ const LandingPage = () => {
               <span className="text-white text-6xl font-semibold font-poppins w-[50%] z-10 relative">
                 {/* Empowering Businesses with  */}
                 {t("ppeh")}
-                &nbsp;
+               <br />
+               {t("ppeh1")}
               </span>
               <span
                 style={{
@@ -271,12 +295,12 @@ const LandingPage = () => {
 
 
         </div>
-        <div className="w-full min-h-[750px] flex justify-end items-center relative px-32">
+        {/* adding button on vedio */}
+        {/* <div className="w-full min-h-[750px] flex justify-end items-center relative px-32">
       <div className="absolute w-full h-full inset-0 bg-[#130D44] opacity-80"></div>
           <div>
             <div className={`absolute z-10 lg:bottom-80 ${isRTL ? 'lg:right-20' : 'lg:left-20'}`}>
               <span className="text-white text-5xl font-semibold font-poppins">
-                {/* AI-Driven PPE Monitoring: */}
                 {t("ppevh")}
               </span>
               <br />
@@ -291,13 +315,9 @@ const LandingPage = () => {
                 }}
                 className="text-5xl font-semibold font-poppins"
               >
-                {/* Enhancing Safety with <br /> Precision */}
                 {t("ppevhc")}
               </span>
               <div className="text-white text-lg font-poppins w-[50%]">
-              {/* Ensure compliance and safety with our AI-powered PPE module,
-          detecting protective gear in real-time and reducing risk across your
-          operation. */}
           {t("ppevp")}
               </div>
             </div>
@@ -308,9 +328,58 @@ const LandingPage = () => {
             muted
             src="vedio1.mp4"
             type="video/mp4"
-            className=" w-full h-auto max-w-[750px] rounded-tl-[160px] rounded-br-[160px] shadow-lg"
+            className=" w-full h-auto max-w-[950px] rounded-tl-[160px] rounded-br-[160px] shadow-lg"
           ></video>
+        </div> */}
+         <div className="w-full min-h-[750px] flex justify-end items-center relative px-32">
+      <div className="absolute w-full h-full inset-0 bg-[#130D44] opacity-80"></div>
+      <div>
+        <div className={`absolute z-10 lg:bottom-80 ${isRTL ? 'lg:right-20' : 'lg:left-20'}`}>
+          <span className="text-white text-5xl font-semibold font-poppins">
+            {t("ppevh")}
+          </span>
+          <br />
+          <span
+            style={{
+              background: "linear-gradient(90deg, #7266BE 0%, #63B1A7 64.58%, #42C09A 100%)",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              marginTop: "24px",
+            }}
+            className="text-5xl font-semibold font-poppins"
+          >
+            {t("ppevhc")}
+          </span>
+          <div className="text-white text-lg font-poppins w-[65%]">
+            {t("ppevp")}
+          </div>
         </div>
+      </div>
+
+      <div className="relative w-full h-auto max-w-[950px]">
+        {/* Video element */}
+        <video
+          ref={videoRef1} // Reference to control video playback
+          loop
+          muted
+          src="vedio1.mp4"
+          type="video/mp4"
+          className="w-full h-auto rounded-tl-[160px] rounded-br-[160px] shadow-lg"
+        ></video>
+
+        {/* Play/Pause button */}
+        <button
+          // onClick={handleVideoToggle}
+          onClick={() => handleVideoToggle(videoRef1, isPlaying1, setIsPlaying1)}
+          className={`absolute inset-0 flex items-center justify-center bg-green-500 text-white rounded-full w-16 h-16 z-20 ${isRTL ? "right-[50%]" : "left-[50%]"} top-[50%]`}
+          style={{ transform: 'translate(-50%, -50%)' }}
+        >
+          {/* {isPlaying ? 'Pause' : 'Play'} */}
+          {isPlaying1 ? <FaPause size={36} /> : <FaPlay size={36} />}
+        </button>
+      </div>
+    </div>
       </div>
 
       {/* rest code */}
@@ -340,15 +409,27 @@ const LandingPage = () => {
           operation." */}
           {t("ppevp")}
         </div>
-        <div className="p-8">
+        <div className="p-8 relative">
           <video
-            autoPlay
+            // autoPlay
+            ref={videoRef2}
             loop
             muted
             src="/vedio1.mp4"
             type="video/mp4"
             className="rounded-xl"
           ></video>
+        {/* Play/Pause button */}
+        <button
+          // onClick={handleVideoToggle}
+          onClick={() => handleVideoToggle(videoRef2, isPlaying2, setIsPlaying2)}
+          // className="absolute inset-0 flex items-center justify-center bg-green-500 text-white rounded-full w-16 h-16 z-20"
+          className={`absolute inset-0 flex items-center justify-center bg-green-500 text-white rounded-full w-16 h-16 z-20 ${isRTL ? "right-[50%]" : "left-[50%]"} top-[50%]`}
+          style={{ transform: 'translate(-50%, -50%)', left: '50%', top: '50%' }}
+        >
+          {/* {isPlaying ? 'Pause' : 'Play'} */}
+          {isPlaying2 ? <FaPause size={36} /> : <FaPlay size={36} />}
+        </button>
         </div>
       </div>
       <div className="py-8 flex flex-col flex-wrap gap-16">
@@ -435,7 +516,8 @@ const LandingPage = () => {
               <span className="text-white text-6xl font-semibold font-poppins">
                 {/* Empowering Businesses with  */}
                 {t("ppeh")}
-                &nbsp;
+               <br />
+               {t("ppeh1")}
               </span>
               <span
                 style={{
@@ -504,14 +586,37 @@ const LandingPage = () => {
             </div>
 
           </div>
-          <video
+          {/* <video
             autoPlay
             loop
             muted
             src="vedio2.mp4"
             type="video/mp4"
             className=" w-full h-auto max-w-[750px] rounded-tl-[160px] rounded-br-[160px] shadow-lg"
-          ></video>
+          ></video> */}
+                <div className="relative w-full h-auto max-w-[950px]">
+        {/* Video element */}
+        <video
+          ref={videoRef3} // Reference to control video playback
+          loop
+          muted
+          src="vedio2.mp4"
+          type="video/mp4"
+          className="w-full h-auto rounded-tl-[160px] rounded-br-[160px] shadow-lg"
+        ></video>
+
+        {/* Play/Pause button */}
+        <button
+          // onClick={handleVideoToggle}
+          onClick={() => handleVideoToggle(videoRef3, isPlaying3, setIsPlaying3)}
+          // className="absolute inset-0 flex items-center justify-center bg-green-500 text-white rounded-full w-16 h-16 z-20"
+          className={`absolute inset-0 flex items-center justify-center bg-green-500 text-white rounded-full w-16 h-16 z-20 ${isRTL ? "right-[50%]" : "left-[50%]"} top-[50%]`}
+          style={{ transform: 'translate(-50%, -50%)', left: '50%', top: '50%' }}
+        >
+          {/* {isPlaying ? 'Pause' : 'Play'} */}
+          {isPlaying3 ? <FaPause size={36} /> : <FaPlay size={36} />}
+        </button>
+      </div>
         </div>
       </div>
       {/* rest code */}
@@ -541,15 +646,27 @@ const LandingPage = () => {
           boosting productivity. */}
           {t("amvp")}
         </div>
-        <div className="p-8">
+        <div className="p-8 relative">
           <video
-            autoPlay
+            // autoPlay
+            ref={videoRef4}
             loop
             muted
             src="/vedio2.mp4"
             type="video/mp4"
             className="rounded-xl"
           ></video>
+        {/* Play/Pause button */}
+        <button
+          // onClick={handleVideoToggle}
+          onClick={() => handleVideoToggle(videoRef4, isPlaying4, setIsPlaying4)}
+          // className="absolute inset-0 flex items-center justify-center bg-green-500 text-white rounded-full w-16 h-16 z-20"
+          className={`absolute inset-0 flex items-center justify-center bg-green-500 text-white rounded-full w-16 h-16 z-20 ${isRTL ? "right-[50%]" : "left-[50%]"} top-[50%]`}
+          style={{ transform: 'translate(-50%, -50%)', left: '50%', top: '50%' }}
+        >
+          {/* {isPlaying ? 'Pause' : 'Play'} */}
+          {isPlaying4 ? <FaPause size={36} /> : <FaPlay size={36} />}
+        </button>
         </div>
       </div>
       <div className="py-8 flex flex-col flex-wrap gap-16">
@@ -598,7 +715,7 @@ const LandingPage = () => {
           <img src="/M1.png" alt="img" className="hidden lg:block" />
         </div>
       </div>
-      <div className="flex items-start justify-center flex-wrap p-8 w-full">
+      <div className="flex items-start justify-center flex-wrap w-[84%] mx-auto">
         <div className="lg:w-[40%] sm:w-full pt-8">
           <span className="text-[#1c154f] text-2xl font-semibold font-poppins">
             {/* Speak with a  */}
@@ -649,11 +766,11 @@ const LandingPage = () => {
       </div>
       <div className=" w-full h-[70%] flex items-center justify-center pt-16">
         <div className="lg:w-[70%] sm:w-full relative">
-          <img src="/chatbotImage.png" alt="image" className="rounded-xl" />
+          <img src="/chatbotImage.png" alt="image" className="rounded-3xl shadow-2xl" />
           <img
             src="/chatbotAbove.png"
             alt="image"
-            className="rounded-xl absolute top-44 right-36 max-[800px]:hidden"
+            className="rounded-3xl absolute top-44 right-36 max-[800px]:hidden shadow-2xl"
           />
         </div>
       </div>
