@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="absolute w-full h-full inset-0 bg-[#130D44] opacity-80"></div>
 
       <div className="container mx-auto px-4 relative z-50">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Section 1: Site Name and Logo */}
           <div className="flex flex-col items-start gap-3 justify-center">
             <h1 className="text-4xl font-bold">Sway AI</h1>
@@ -20,8 +20,9 @@ const Footer = () => {
               {t("vision")}
             </p>
           </div>
+          <div></div>
           {/* Section 2: Our Modules */}
-          <div className='text-center'>
+          <div className=''>
             <h2 className="text-lg font-semibold mb-4 text-[#42c09a]">
               {/* Our Modules */}
               {t("modules")}
@@ -40,7 +41,7 @@ const Footer = () => {
             </ul>
           </div>
           {/* Section 3: Pages */}
-          <div className='text-center'>
+          <div className='pl-8'>
             <h2 className="text-lg font-semibold mb-4 text-[#42c09a]">
               {/* Pages */}
               {t("pages")}
@@ -63,26 +64,17 @@ const Footer = () => {
 
           {/* Section 4: Follow Us */}
           <div>
-            <h2 className="text-lg font-semibold mb-4 text-center text-[#42c09a]">
+            <h2 className="text-lg font-semibold mb-4 text-[#42c09a]">
               {/* Follow Us */}
               {t("follow")}
               </h2>
-            <ul className="flex justify-center gap-12">
+            <ul className="flex gap-8">
         <li>
           <a
             href="https://facebook.com"
             className="flex items-center space-x-2 hover:underline"
           >
-            <FaFacebook className='text-4xl' />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://twitter.com"
-            className="flex items-center justify-center space-x-2 hover:underline"
-          >
-            <TbLetterX className="text-4xl" />
-            {/* <img src="/twitterXicon.png" alt="X" /> */}
+            <FaFacebook className='text-2xl' />
           </a>
         </li>
         <li>
@@ -90,7 +82,16 @@ const Footer = () => {
             href="https://linkedin.com"
             className="flex items-center space-x-2 hover:underline"
           >
-            <FaLinkedin className="text-4xl" />
+            <FaLinkedin className="text-2xl" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com"
+            className="flex items-center justify-center space-x-2 hover:underline"
+          >
+            <TbLetterX className="text-2xl" />
+            {/* <img src="/twitterXicon.png" alt="X" /> */}
           </a>
         </li>
       </ul>

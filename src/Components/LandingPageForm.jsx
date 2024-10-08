@@ -173,11 +173,7 @@ const Form = () => {
                 mt: 2,
                 px: 2,
                 backgroundColor: "#534998",
-
                 fontSize: "1rem",
-                "&:hover": {
-                  backgroundColor: "#ff79b0",
-                },
               }}
             >
               {/* Send Message */}

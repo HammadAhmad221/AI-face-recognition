@@ -40,10 +40,10 @@ const SectionWithCards = () => {
         >
           {/* Transform Your */}
           {t("csh")}
-          {/* <br />  */}
+          <br /> 
           {/* Business With Future */}
           {/* {t("csh2")} */}
-          &nbsp;
+          {t("csh1")}<br/>
           <span
             style={{
               background:

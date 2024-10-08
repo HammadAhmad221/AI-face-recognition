@@ -26,7 +26,7 @@ const LandingPage = () => {
       animation: slideInFromTop,
     },
     {
-      text: t("hsa1"),
+      text: t("hsa2"),
       color: "linear-gradient(90deg, #FA4CF3 0%, #FFFFFF 100%)",
       animation: slideInFromBottom,
     },
@@ -121,29 +121,70 @@ const LandingPage = () => {
           >
             {headings[currentHeading].text}
           </Typography>
-          <Button
+          {/* <Button
             variant="outlined"
             color="primary"
             component={Link}
             to="/form"
             sx={{
               mt: 2,
-              borderRadius: "10px",
-              border: "3px solid #42C09A",
+              border: "3px solid",
+              borderImage:"linear-gradient(90deg, #42C09A 0%, #ECFF76 100%)",
               boxShadow: "0px 0px 15.4px 0px rgba(155, 250, 221, 0.16)",
+              borderImageSlice:1,
+              borderRadius: "20px",
               padding: "12px 24px",
-              fontSize: "1.5rem",
+              fontSize: "1.2rem",
               backgroundColor: "transparent",
               color: "#CBC3E3",
               "&:hover": {
-                background: "linear-gradient(90deg, #42C09A 0%, #ECFF76 100%)",
-                color: "#fff",
+                background: "#534998",
+              color: "#CBC3E3",
               },
             }}
           >
-            {/* Schedule a Demo */}
             {t("hsb")}
-          </Button>
+          </Button> */}
+          <Button
+  color="transparent"
+  component={Link}
+  to="/form"
+  sx={{
+    mt: 2,
+    position: "relative", // Needed for the pseudo-element positioning
+    padding: "12px 24px",
+    fontSize: "1.2rem",
+    borderRadius: "10px", // Ensures button corners are rounded
+    backgroundColor: "transparent",
+    color: "#CBC3E3",
+    zIndex: 1, // Ensures the content stays above the gradient
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      borderRadius: "inherit", // Matches the border-radius of the button
+      padding: "2px", // Defines the thickness of the gradient border
+      background: "linear-gradient(90deg, #42c09a 0%, #534998 100%)",
+      WebkitMask:
+        "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+      mask:
+        "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)", // Makes sure the gradient is on the border
+      maskComposite: "exclude", // Ensures that the gradient doesn't fill the inner part
+      zIndex: -1,
+    },
+    "&:hover": {
+      background: "#534998",
+      color: "#CBC3E3",
+    },
+    boxShadow: "0px 0px 15.4px 0px rgba(155, 250, 221, 0.16)",
+  }}
+>
+  {t("hsb")}
+</Button>
+
         </Container>
       </Box>
       <SectionWithCards />
@@ -207,23 +248,36 @@ const LandingPage = () => {
               {t("ppep")}
             </div>
           </div>
-          <div className="flex flex-col justify-start items-start z-10 relative">
+          {/* <div className="flex flex-col justify-start items-start z-10 relative">
             <div className="px-5 py-2.5 bg-gradient-to-r from-[#534998] to-[#42c09a] rounded-[10px] shadow border-2 flex flex-col justify-center items-center">
               <div className="rounded flex justify-start items-center gap-2">
                 <div className="text-center text-white text-2xl font-normal font-poppins">
-                  {/* Schedule a Demo */}
                   {t("hsb")}
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+          {/* <button className="text-white px-5 py-2.5 bg-gradient-to-r from-[#42c09a] to-[#534998] rounded-[10px] shadow border-2 flex flex-col justify-center items-center">
+            {t("hsb")}
+          </button> */}
+{/* <button class="relative block px-6 py-3 text-xl font-semibold bg-gradient-to-r from-[#534998] to-[#42C09A] text-[#CBC3E3] rounded-lg border-none hover:bg-[#534998] shadow-[0px_0px_15.4px_0px_rgba(155,250,221,0.16)]">
+  Schedule a Demo
+</button> */}
+<button class="relative block px-8 py-3 text-2xl text-[#CBC3E3] rounded-lg border-none shadow-[0px_0px_15.4px_0px_rgba(155,250,221,0.16)] bg-gradient-to-r from-[#534998] to-[#42C09A] transition-all duration-300 ease-in-out hover:from-[#534998] hover:to-[#534998]">
+  {/* Schedule a Demo */}
+  {t("hsb")}
+</button>
+
+
+
         </div>
         <div className="w-full min-h-[750px] flex justify-end items-center relative px-32">
       <div className="absolute w-full h-full inset-0 bg-[#130D44] opacity-80"></div>
           <div>
             <div className={`absolute z-10 lg:bottom-80 ${isRTL ? 'lg:right-20' : 'lg:left-20'}`}>
               <span className="text-white text-5xl font-semibold font-poppins">
-                AI-Driven PPE Monitoring:
+                {/* AI-Driven PPE Monitoring: */}
+                {t("ppevh")}
               </span>
               <br />
               <span
@@ -237,8 +291,15 @@ const LandingPage = () => {
                 }}
                 className="text-5xl font-semibold font-poppins"
               >
-                Enhancing Safety with <br /> Precision
+                {/* Enhancing Safety with <br /> Precision */}
+                {t("ppevhc")}
               </span>
+              <div className="text-white text-lg font-poppins w-[50%]">
+              {/* Ensure compliance and safety with our AI-powered PPE module,
+          detecting protective gear in real-time and reducing risk across your
+          operation. */}
+          {t("ppevp")}
+              </div>
             </div>
           </div>
           <video
@@ -256,7 +317,8 @@ const LandingPage = () => {
       <div className="sm:flex flex-col items-center justify-center lg:hidden bg-[#130c44]">
         <div className="lg:w-[50%] sm:w-full text-center">
           <span className="text-white text-[32px] font-semibold font-poppins">
-            AI-Driven PPE Monitoring:
+            {/* AI-Driven PPE Monitoring: */}
+            {t("ppevh")}
           </span>
           <span
             style={{
@@ -268,13 +330,15 @@ const LandingPage = () => {
             }}
             className="text-[#7166be] text-[32px] font-semibold font-poppins"
           >
-            Enhancing Safety with Precision
+            {/* Enhancing Safety with Precision */}
+            {t("ppevhc")}
           </span>
         </div>
         <div className="lg:w-[40%] sm:w-full text-center text-white text-base font-medium font-poppins leading-normal">
-          "Ensure compliance and safety with our AI-powered PPE module,
+          {/* "Ensure compliance and safety with our AI-powered PPE module,
           detecting protective gear in real-time and reducing risk across your
-          operation."
+          operation." */}
+          {t("ppevp")}
         </div>
         <div className="p-8">
           <video
@@ -395,24 +459,28 @@ const LandingPage = () => {
               {t("amp")}
             </div>
           </div>
-          <div className="flex flex-col justify-start items-start">
+          {/* <div className="flex flex-col justify-start items-start">
             <div className="px-5 py-2.5 bg-gradient-to-r from-[#534998] to-[#42c09a] rounded-[10px] shadow border-2 flex flex-col justify-center items-center">
               <div className="rounded flex justify-start items-center gap-2">
                 <div className="text-center text-white text-2xl font-normal font-poppins">
-                  {/* Schedule a Demo */}
                   {t("hsb")}
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+          <button class="relative block px-8 py-3 text-2xl text-[#CBC3E3] rounded-lg border-none shadow-[0px_0px_15.4px_0px_rgba(155,250,221,0.16)] bg-gradient-to-r from-[#534998] to-[#42C09A] transition-all duration-300 ease-in-out hover:from-[#534998] hover:to-[#534998]">
+            {/* Schedule a Demo */}
+            {t("hsb")}
+          </button>
         </div>
         <div className="w-full min-h-[750px] flex justify-end items-center relative px-32">
       <div className="absolute w-full h-full inset-0 bg-[#130D44] opacity-80"></div>
           <div>
             <div className={`absolute z-10 lg:bottom-80 ${isRTL ? 'lg:right-20' : 'lg:left-20'}`}>
               <span className="text-white text-5xl font-semibold font-poppins">
-                AI-Driven Attendance <br /> Tracking:
-              </span>
+                {/* AI-Driven Attendance <br /> Tracking: */}
+                {t("amvh")}
+              </span><br />
               <span
                 style={{
                   background:
@@ -424,9 +492,17 @@ const LandingPage = () => {
                 }}
                 className="text-5xl font-semibold font-poppins"
               >
-                Optimize <br /> Workforce Management
-              </span>
+                {/* Optimize <br /> Workforce Management */}
+                {t("amvhc")}
+              </span><br />
+              <div className="text-white text-lg font-poppins w-[50%]">
+            {/* Efficiently manage employee attendance with our AI-powered module.
+          Achieve accurate tracking and compliance, reducing admin tasks and
+          boosting productivity. */}
+          {t("amvp")}
+              </div>
             </div>
+
           </div>
           <video
             autoPlay
@@ -442,7 +518,8 @@ const LandingPage = () => {
       <div className="sm:flex flex-col items-center justify-center lg:hidden bg-[#130c44]">
         <div className="lg:w-[50%] sm:w-full text-center">
           <span className="text-white text-[32px] font-semibold font-poppins">
-            AI-Driven Attendance Tracking:
+            {/* AI-Driven Attendance Tracking: */}
+            {t("amvh")}
           </span>
           <span
             style={{
@@ -454,13 +531,15 @@ const LandingPage = () => {
             }}
             className="text-[#7166be] text-[32px] font-semibold font-poppins"
           >
-            Optimize Workforce Management
+            {/* Optimize Workforce Management */}
+            {t("amvhc")}
           </span>
         </div>
         <div className="lg:w-[40%] sm:w-full text-center text-white text-base font-medium font-poppins leading-normal">
-          Efficiently manage employee attendance with our AI-powered module.
+          {/* Efficiently manage employee attendance with our AI-powered module.
           Achieve accurate tracking and compliance, reducing admin tasks and
-          boosting productivity.
+          boosting productivity. */}
+          {t("amvp")}
         </div>
         <div className="p-8">
           <video
@@ -551,15 +630,21 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="flex flex-col flex-wrap items-center justify-center gap-12">
-        <div className="lg:w-[35%] sm:w-full text-center text-[#42c09a] text-[40px] font-semibold font-poppins p-4">
-          {/* Enjoy Using Customize & Train with Ease, No-Code AI Modules */}
+        {/* <div className="lg:w-[35%] sm:w-full text-center text-[#42c09a] text-[40px] font-semibold font-poppins p-4">
           {t("hbf")}
-        </div>
+        </div> */}
+        <div className="lg:w-[35%] sm:w-full text-center text-transparent bg-clip-text bg-gradient-to-r from-[#534998] to-[#42c09a] text-[40px] font-semibold font-poppins p-4">
+  {t("hbf")}
+</div>
+
         <div className="h-16 flex-col justify-start items-start inline-flex">
-          <div className="h-16 px-5 py-2.5 bg-gradient-to-r from-[#534998] to-[#42c09a] rounded-[10px] shadow border-2 flex-col justify-center items-center flex text-center text-white text-2xl font-normal font-poppins">
-            {/* Schedule a Demo */}
+          {/* <div className="h-16 px-5 py-2.5 bg-gradient-to-r from-[#534998] to-[#42c09a] rounded-[10px] shadow border-2 flex-col justify-center items-center flex text-center text-white text-2xl font-normal font-poppins">
             {t("hsb")}
-          </div>
+          </div> */}
+                    <button class="relative block px-8 py-3 text-2xl text-white rounded-lg border-none shadow-[0px_0px_15.4px_0px_rgba(155,250,221,0.16)] bg-gradient-to-r from-[#534998] to-[#42C09A] transition-all duration-300 ease-in-out hover:from-[#534998] hover:to-[#534998]">
+  {/* Schedule a Demo */}
+  {t("hsb")}
+</button>
         </div>
       </div>
       <div className=" w-full h-[70%] flex items-center justify-center pt-16">
@@ -568,7 +653,7 @@ const LandingPage = () => {
           <img
             src="/chatbotAbove.png"
             alt="image"
-            className="rounded-xl absolute top-44 right-36"
+            className="rounded-xl absolute top-44 right-36 max-[800px]:hidden"
           />
         </div>
       </div>
