@@ -175,8 +175,8 @@ const LandingPage = () => {
   sx={{
     mt: 2,
     position: "relative", // Needed for the pseudo-element positioning
-    padding: "12px 24px",
-    fontSize: "1.2rem",
+    padding: "12px 88px",
+    fontSize: "1.5rem",
     borderRadius: "10px", // Ensures button corners are rounded
     backgroundColor: "transparent",
     color: "#CBC3E3",
@@ -287,7 +287,7 @@ const LandingPage = () => {
 {/* <button class="relative block px-6 py-3 text-xl font-semibold bg-gradient-to-r from-[#534998] to-[#42C09A] text-[#CBC3E3] rounded-lg border-none hover:bg-[#534998] shadow-[0px_0px_15.4px_0px_rgba(155,250,221,0.16)]">
   Schedule a Demo
 </button> */}
-<button class="relative block px-8 py-3 text-2xl text-[#CBC3E3] rounded-lg border-none shadow-[0px_0px_15.4px_0px_rgba(155,250,221,0.16)] bg-gradient-to-r from-[#534998] to-[#42C09A] transition-all duration-300 ease-in-out hover:from-[#534998] hover:to-[#534998]">
+<button class="relative block px-[115px] py-4 text-2xl text-[#CBC3E3] rounded-lg border-none shadow-[0px_0px_15.4px_0px_rgba(155,250,221,0.16)] bg-gradient-to-r from-[#534998] to-[#42C09A] transition-all duration-300 ease-in-out hover:from-[#534998] hover:to-[#534998]">
   {/* Schedule a Demo */}
   {t("hsb")}
 </button>
@@ -550,7 +550,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div> */}
-          <button class="relative block px-8 py-3 text-2xl text-[#CBC3E3] rounded-lg border-none shadow-[0px_0px_15.4px_0px_rgba(155,250,221,0.16)] bg-gradient-to-r from-[#534998] to-[#42C09A] transition-all duration-300 ease-in-out hover:from-[#534998] hover:to-[#534998]">
+          <button class="relative block px-[115px] py-4 text-2xl text-[#CBC3E3] rounded-lg border-none shadow-[0px_0px_15.4px_0px_rgba(155,250,221,0.16)] bg-gradient-to-r from-[#534998] to-[#42C09A] transition-all duration-300 ease-in-out hover:from-[#534998] hover:to-[#534998]">
             {/* Schedule a Demo */}
             {t("hsb")}
           </button>
@@ -758,7 +758,7 @@ const LandingPage = () => {
           {/* <div className="h-16 px-5 py-2.5 bg-gradient-to-r from-[#534998] to-[#42c09a] rounded-[10px] shadow border-2 flex-col justify-center items-center flex text-center text-white text-2xl font-normal font-poppins">
             {t("hsb")}
           </div> */}
-                    <button class="relative block px-8 py-3 text-2xl text-white rounded-lg border-none shadow-[0px_0px_15.4px_0px_rgba(155,250,221,0.16)] bg-gradient-to-r from-[#534998] to-[#42C09A] transition-all duration-300 ease-in-out hover:from-[#534998] hover:to-[#534998]">
+                    <button class="relative block px-[115px] py-4 text-2xl text-white rounded-lg border-none shadow-[0px_0px_15.4px_0px_rgba(155,250,221,0.16)] bg-gradient-to-r from-[#534998] to-[#42C09A] transition-all duration-300 ease-in-out hover:from-[#534998] hover:to-[#534998]">
   {/* Schedule a Demo */}
   {t("hsb")}
 </button>
